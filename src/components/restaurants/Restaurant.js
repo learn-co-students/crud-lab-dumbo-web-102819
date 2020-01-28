@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReviewsContainer from '../../containers/ReviewsContainer'
+import { connect } from 'react-redux'
 
 class Restaurant extends Component {
 
@@ -11,8 +12,8 @@ class Restaurant extends Component {
       <div>
         <li>
           {restaurant.text}
-          <button> X </button>
-          <ReviewsContainer restaurant={restaurant}/>
+          <button onClick={() => this.props.deleteRestaurant(this.props.restaurant.id)}> X </button>
+          <ReviewsContainer restaurant={restaurant} />
         </li>
       </div>
     );
